@@ -83,7 +83,8 @@ void ARicochetCharacter::LookInput(const FInputActionValue& Value)
 	FVector2D LookAxisVector = Value.Get<FVector2D>();
 
 	// pass the axis values to the aim input
-	DoAim(LookAxisVector.X, LookAxisVector.Y);
+	DoAim(LookAxisVector.X, -LookAxisVector.Y);
+	GEngine->AddOnScreenDebugMessage(-1, 5, FColor::Yellow, TEXT("LookInput was run."));
 
 }
 
